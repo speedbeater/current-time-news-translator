@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time News Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Current Time News Translator</h1>
+        <p>Get the latest headlines from Current Time TV translated to English</p>
+        
+        <form method="POST">
+            <button type="submit" class="btn">Fetch Latest News</button>
+        </form>
+        
+        {% if show_results %}
+        <div class="report">
+            <h2>News Report</h2>
+            <pre>{{ report }}</pre>
+            <button onclick="window.location.href='mailto:?body={{ report|urlencode }}&subject=Current%20Time%20News%20Report'"
+                    class="btn email-btn">
+                Send via Email
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
