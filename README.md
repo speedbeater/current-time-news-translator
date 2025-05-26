@@ -15,3 +15,9 @@ git clone https://github.com/speedbeater/current-time-news-translator.git
 cd current-time-news-translator
 pip install -r requirements.txt
 python currenttime_report.py
+## Web Interface
+
+The application now includes a Flask web interface. To run it:
+
+```bash
+flask run
